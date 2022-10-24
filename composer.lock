@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5612fd5b76dd8676d7ff196359b7d636",
+    "content-hash": "a59998bb51739e8236c3f3c71dc7db54",
     "packages": [
         {
             "name": "brick/math",
@@ -5628,51 +5628,6 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
-            "name": "heroku/heroku-buildpack-php",
-            "version": "v225",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "6e2edde4512d5af97aa79ee6f42fe84620306164"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/6e2edde4512d5af97aa79ee6f42fe84620306164",
-                "reference": "6e2edde4512d5af97aa79ee6f42fe84620306164",
-                "shasum": ""
-            },
-            "bin": [
-                "bin/heroku-php-apache2",
-                "bin/heroku-php-nginx"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David Zuelke",
-                    "email": "dz@heroku.com"
-                }
-            ],
-            "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP and Apache2/Nginx as on Heroku",
-            "homepage": "https://github.com/heroku/heroku-buildpack-php",
-            "keywords": [
-                "apache",
-                "apache2",
-                "foreman",
-                "heroku",
-                "nginx",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/heroku/heroku-buildpack-php/issues",
-                "source": "https://github.com/heroku/heroku-buildpack-php/tree/v225"
-            },
-            "time": "2022-10-05T22:06:21+00:00"
-        },
-        {
             "name": "mockery/mockery",
             "version": "1.5.1",
             "source": {
@@ -7739,10 +7694,9 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1.0"
+        "php": "^8.1.0",
+        "ext-redis": "*"
     },
-    "platform-dev": {
-        "ext-redis": "5.3.7"
-    },
+    "platform-dev": [],
     "plugin-api-version": "2.3.0"
 }

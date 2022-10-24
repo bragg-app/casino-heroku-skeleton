@@ -9,16 +9,15 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "ext-redis": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
-	"heroku/heroku-buildpack-php": "*",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0",
-	"ext-redis": "5.3.7"
+        "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {
         "psr-4": {
