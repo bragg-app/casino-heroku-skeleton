@@ -18,7 +18,11 @@
 	$db_test = false;
    }
    $db_test_verbose = $db_test === true ? "works" : $db;
+   $laravel_version = Illuminate\Foundation\Application::VERSION;
+   $php_version = PHP_VERSION;
 @endphp
 
 <p><strong>Cache Test:</strong> {{ $cache_test }}</p>
 <p><strong>Database Connection:</strong> {{ $db_test_verbose }}</p>
+<p><strong>PHP version:</strong> {{ $php_version }}</p>
+<p><strong>Laravel version:</strong> {{ $laravel_version }}</p>
