@@ -23,7 +23,17 @@
 
    if($cache_retrieve) {
 	$dispatch_job = \App\Jobs\TestJob::dispatch();
+        $now_max = now()->subSeconds(30)->timestamp;
         $job_test = \Illuminate\Support\Facades\Cache::get('job_test');
+        if($job_test) {
+           if($get_job_test < $now_max) {
+               \App\Jobs\TestJob::dispatch();
+               $job_test = \Illuminate\Support\Facades\Cache::get('job_test');
+           }
+        } else {
+	   \App\Jobs\TestJob::dispatch();
+           $job_test = \Illuminate\Support\Facades\Cache::get('job_test');
+	}
    }
 
 @endphp
@@ -32,4 +42,4 @@
 <p><strong>Database Connection:</strong> {{ $db_test_verbose }}</p>
 <p><strong>PHP version:</strong> {{ $php_version }}</p>
 <p><strong>Laravel version:</strong> {{ $laravel_version }}</p>
-<p><strong>Job Test:</strong> {{ $job_test }}</p>
+<p><strong>Job Test:</strong> {{ $job_test->toDate() }}</p>

@@ -33,12 +33,13 @@ class TestJob implements ShouldQueue
     {
 	$get_job_test = Cache::get('job_test');
 	$now = now()->timestamp;
-	$now_max = now()->subSeconds(60)->timestamp;
+	$now_max = now()->subSeconds(30)->timestamp;
 	if($get_job_test) {
            if($get_job_test > $now_max) {
 	     	return '';
 	   }
 	}
         Cache::put('job_test', $now);
+	sleep(3000);
     }
 }
