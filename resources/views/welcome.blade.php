@@ -8,7 +8,7 @@
         $cache_error = $e->getMessage();
    }
 
-   $cache_test = $cache_retrieve === NULL ? "works" : $cache_error;
+   $cache_test = $cache_retrieve !== NULL ? "works" : $cache_error;
 
    try{
         $db = DB::connection()->getDatabaseName();
