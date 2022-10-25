@@ -19,7 +19,7 @@ class TestJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(string $date)
+    public function __construct()
     {
 
     }
