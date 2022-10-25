@@ -1,17 +1,13 @@
-### Wainwright Casino Tools: heroku skeleton
-This repository is to be the blank canvas for any casino project and serves as a good starting point.
+# Wainwright Casino Tools: Heroku Skeleton 
+This repository is to be the blank canvas for any casino project and serves as a good 1-click deploy starting point. 
 
 Simply drop your development within the *.wainwright* folder and add to composer.json *wainwright/{your_package_tag}*.
 
-All free casino plugins that will be released will be made to easily be run **ephemeral** within Heroku (and for that matter any similar cloud provider). 
+All Wainwright related products are completely free of charge.
 
-Final goal is to be able to actually customize very specifically each host as a micro API service on it's own by click on button and that way scale exactly as you need with very specific services. Most services have been made already and now I will be working on making these into small one-click-launch services.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Meanwhile make sure to check in-to the main documentation (to be made) for actual thievery done by casino's like [Stake.com](Stake.com), [Superbet.com](Superbet.com), GiG.com, [777.nl](777.nl), Premiercasino.com, [MGMBets.com](https://mgmbets.com), MicroGaming and many more.
-
-Chapters like Dutch [Mollie.nl](https://mollie.nl) laundry, stealing 300M as PayVision/SlotVision from ING Bank, [Telecom laundry](https://github.com/shlomoVIVO/telecom_centrifuge), offering in illegal gaming areas are orchistrated by people like David G. Wainwright (playtech/hollywoodtv/upgaming/softgaming/inbet/goldenrace/tvbet/gijabet), Vlad Suciu (playtech), Laurence Phillipe (theroyalcompany.nl), Ilya Koral (softswiss.com), Matteo Di Matteo(mondogaming.com/1xbet), Dejan Jovic(blueoceangaming/1xbet).
-
-## Prerequisites
+### Prerequisites
 + PHP (and ideally some Laravel) knowledge.
 + A Heroku user account: [SignUp is free and instant](https://signup.heroku.com/signup/dc)
 + Familiarity with [getting started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) guide, with the following things installed on your **local** machine:
@@ -20,18 +16,17 @@ Chapters like Dutch [Mollie.nl](https://mollie.nl) laundry, stealing 300M as Pay
     +Composer.
     +Heroku CLI.
 
-#### Heroku CLI
-Best is to use Heroku CLI to deploy and also develop Wainwright app.
-To do that we need to run this set of commands in our command-line which will be found [here](https://cli.heroku.com/).
+### Heroku CLI
+Heroku offer cloud hosting in ephemeral form, basically being a pipeline for lazy/solo people. I'm not sure for productional if you want to run this over bare.
+You can use Heroku totally free of charge: instant deploy applications, database and queues on this platform. 
 
+As I'm not the best docs writer this allows me to cut down on explaining stuff and you can get straight to offer 2-4k+ slotmachines by single click instead and get used to project structures just by creating around. If you mess up because being ephemeral, you can simply just restart machine to restore the state.
 
-# About Laravel Application
-Laravel powers base of all wainwright casino plugins. This repository is used for deploying a base laravel application, ready to be added Wainwright casino plugins.
-You need PHP, Composer, Heroku CLI (optional yet preferable) and Heroku Account (free).
+Below installation explaination is in combination with Heroku CLI. To do that we need to run this set of commands in our command-line which will be found [here](https://cli.heroku.com/) from your dev/local environment.
 
 __
 
-# Install Laravel Application
+## Install Laravel Application
 First setup this repository on your local machine:
 ```bash 
 $ git clone {this_repository_url}.git wainwright
@@ -85,7 +80,7 @@ $ heroku open
 
 
 
-# Updating Heroku
+## Updating Heroku
 To update host, all you do is commit and push:
 ```bash
 $ git add .
@@ -95,7 +90,7 @@ $ git push heroku master
 
 ___
 
-# Assigning Static IP to Dyno/Host
+## Assigning Static IP to Dyno/Host
 Static IP (outgoing traffic) is important if using IP filters within casino plugins as part of internal security. 
 
 You can easily assign static/dedicated IP by using external addon:
@@ -108,7 +103,7 @@ You can find more of such (and most of time totally free) services within [Herok
 ___
 
 
-# Wainwright Plugins
+## Wainwright Plugins
 After having this base app live & functioning properly, you can add wainwright plugins contents within the .wainwright folder in this base app. 
 
 You then proceed and load the actual plugins by adding running:
@@ -121,7 +116,7 @@ $ git push heroku master
 __
 
 
-# Setting up to use _existing_ Heroku
+## Setting up to use _existing_ Heroku
 To setup the remote link to existing Heroku host (for example after re-install PC or switching dev areas):
 ```bash
 heroku git:remote -a wainwright
@@ -134,24 +129,31 @@ $ heroku git:clone -a wainwright
 
 
 
-# Pushing The Database
+## Pushing The Database
 We have two ways of pushing the database.
 
-## First Option
+### First Option
 If you want to start a fresh without anything you may run the following command:
 
 ```bash
 $ heroku run php /app/artisan migrate
 ```
 
-## Second Option
+### Second Option
 This is done if you want to push your local db to the database in heroku:
 
 ```bash
 heroku pg:push <The name of the db in the local psql> DATABASE_URL --app <heroku-app>
 ```
 
-### Footnote and goal of this project as a whole
+## Very Helpful Articles
++ [Configuring Postgre](https://mattstauffer.com/blog/laravel-on-heroku-using-a-postgresql-database/)
++ [Getting started with heroku laravel](https://devcenter.heroku.com/articles/getting-started-with-laravel)
++ [Best Practices](https://devcenter.heroku.com/articles/getting-started-with-laravel#best-practices)
++ [Further Reading](https://devcenter.heroku.com/articles/getting-started-with-laravel#further-reading)
+
+
+## Footnote and goal of this project as a whole
 
 All free casino plugins that will be released will be made to easily be run **ephemeral** within Heroku (and for that matter any similar cloud provider). 
 
@@ -163,8 +165,3 @@ Chapters like Dutch [Mollie.nl](https://mollie.nl) laundry, stealing 300M as Pay
 
 Much more indepth info to be relreased, such as bridging methods thoroughly explained, though to be hundreds of pages and is to be done in the end so I don't end up polluting tech docs (like I am doing now) of something I enjoy building to learn new skills.
 
-# Very Helpful Articles
-+ [Configuring Postgre](https://mattstauffer.com/blog/laravel-on-heroku-using-a-postgresql-database/)
-+ [Getting started with heroku laravel](https://devcenter.heroku.com/articles/getting-started-with-laravel)
-+ [Best Practices](https://devcenter.heroku.com/articles/getting-started-with-laravel#best-practices)
-+ [Further Reading](https://devcenter.heroku.com/articles/getting-started-with-laravel#further-reading)
