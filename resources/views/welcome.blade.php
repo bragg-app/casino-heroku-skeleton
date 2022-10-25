@@ -5,12 +5,10 @@
         $cache_retrieve = \Illuminate\Support\Facades\Cache::get('cache_test');
 	$cache_error = NULL;
    } catch(Exception $e){
-	$cache_retrieve = NULL;
         $cache_error = $e->getMessage();
    }
 
-   $cache_test = $cache_retrieve === NULL ? true : false;
-   $cache_test_verbose = $cache_test === true ? "works" : $cache_error;
+   $cache_test = $cache_retrieve === NULL ? "works" : $cache_error;
 
    try{
         $db = DB::connection()->getDatabaseName();
