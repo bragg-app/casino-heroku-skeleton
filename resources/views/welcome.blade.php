@@ -42,4 +42,4 @@
 <p><strong>Database Connection:</strong> {{ $db_test_verbose }}</p>
 <p><strong>PHP version:</strong> {{ $php_version }}</p>
 <p><strong>Laravel version:</strong> {{ $laravel_version }}</p>
-<p><strong>Job Test:</strong> {{ $job_test->toDate() }}</p>
+<p><strong>Job Test:</strong> {{ $job_test }}</p>

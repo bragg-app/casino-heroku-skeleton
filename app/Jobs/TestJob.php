@@ -40,6 +40,5 @@ class TestJob implements ShouldQueue
 	   }
 	}
         Cache::put('job_test', $now);
-	sleep(3000);
     }
 }
