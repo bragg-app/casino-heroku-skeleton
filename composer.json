@@ -7,7 +7,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": ".wainwright"
+            "url": ".wainwright/*"
         }
     ],
     "require": {
@@ -17,8 +17,8 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "ext-redis": "*",
-	"ext-openssl": "*",
-	"ext-apcu": "*"
+	    "ext-openssl": "*",
+	    "ext-apcu": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -45,10 +45,10 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --no-ansi --force"
         ],
         "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.heroku', '.env');\""
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
@@ -62,10 +62,7 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
