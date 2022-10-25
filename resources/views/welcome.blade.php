@@ -20,5 +20,5 @@
    $db_test_verbose = $db_test === true ? "works" : $db;
 @endphp
 
-<p><strong>Cache Test:</strong> {{ $cache_test_verbose }}</p>
+<p><strong>Cache Test:</strong> {{ $cache_test }}</p>
 <p><strong>Database Connection:</strong> {{ $db_test_verbose }}</p>
