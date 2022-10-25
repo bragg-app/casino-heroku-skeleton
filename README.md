@@ -1,3 +1,16 @@
+### Wainwright Casino Tools: heroku skeleton
+This repository is to be the blank canvas for any casino project and serves as a good starting point.
+
+Simply drop your development within the *.wainwright* folder and add to composer.json *wainwright/{your_package_tag}*.
+
+All free casino plugins that will be released will be made to easily be run **ephemeral** within Heroku (and for that matter any similar cloud provider). 
+
+Final goal is to be able to actually customize very specifically each host as a micro API service on it's own by click on button and that way scale exactly as you need with very specific services. Most services have been made already and now I will be working on making these into small one-click-launch services.
+
+Meanwhile make sure to check in-to the main documentation (to be made) for actual thievery done by casino's like [Stake.com](Stake.com), [Superbet.com](Superbet.com), GiG.com, [777.nl](777.nl), Premiercasino.com, [MGMBets.com](https://mgmbets.com), MicroGaming and many more.
+
+Chapters like Dutch [Mollie.nl](https://mollie.nl) laundry, stealing 300M as PayVision/SlotVision from ING Bank, [Telecom laundry](https://github.com/shlomoVIVO/telecom_centrifuge), offering in illegal gaming areas are orchistrated by people like David G. Wainwright (playtech/hollywoodtv/upgaming/softgaming/inbet/goldenrace/tvbet/gijabet), Vlad Suciu (playtech), Laurence Phillipe (theroyalcompany.nl), Ilya Koral (softswiss.com), Matteo Di Matteo(mondogaming.com/1xbet), Dejan Jovic(blueoceangaming/1xbet).
+
 ## Prerequisites
 + PHP (and ideally some Laravel) knowledge.
 + A Heroku user account: [SignUp is free and instant](https://signup.heroku.com/signup/dc)
@@ -80,6 +93,19 @@ $ git commit
 $ git push heroku master
 ```
 
+___
+
+# Assigning Static IP to Dyno/Host
+Static IP (outgoing traffic) is important if using IP filters within casino plugins as part of internal security. 
+
+You can easily assign static/dedicated IP by using external addon:
+```
+heroku addons:create ipburger:free -a wainwright
+```
+
+You can find more of such (and most of time totally free) services within [Heroku's Marketplace](https://elements.heroku.com/addons).
+
+___
 
 
 # Wainwright Plugins
@@ -92,7 +118,7 @@ $ composer update
 $ git push heroku master
 ```
 
-
+__
 
 
 # Setting up to use _existing_ Heroku
@@ -125,7 +151,17 @@ This is done if you want to push your local db to the database in heroku:
 heroku pg:push <The name of the db in the local psql> DATABASE_URL --app <heroku-app>
 ```
 
+### Footnote and goal of this project as a whole
 
+All free casino plugins that will be released will be made to easily be run **ephemeral** within Heroku (and for that matter any similar cloud provider). 
+
+Final goal is to be able to actually customize very specifically each host as a micro API service on it's own by click on button and that way scale exactly as you need with very specific services. Most services have been made already and now I will be working on making these into small one-click-launch services.
+
+Meanwhile make sure to check in-to the main documentation (to be made) for actual thievery done by casino's like [Stake.com](Stake.com), [Superbet.com](Superbet.com), GiG.com, [777.nl](777.nl), Premiercasino.com, [MGMBets.com](https://mgmbets.com), MicroGaming and many more.
+
+Chapters like Dutch [Mollie.nl](https://mollie.nl) laundry, stealing 300M as PayVision/SlotVision from ING Bank, [Telecom laundry](https://github.com/shlomoVIVO/telecom_centrifuge), offering in illegal gaming areas are orchistrated by people like David G. Wainwright (playtech/hollywoodtv/upgaming/softgaming/inbet/goldenrace/tvbet/gijabet), Vlad Suciu (playtech), Laurence Phillipe (theroyalcompany.nl), Ilya Koral (softswiss.com), Matteo Di Matteo(mondogaming.com/1xbet), Dejan Jovic(blueoceangaming/1xbet).
+
+Much more indepth info to be relreased, such as bridging methods thoroughly explained, though to be hundreds of pages and is to be done in the end so I don't end up polluting tech docs (like I am doing now) of something I enjoy building to learn new skills.
 
 # Very Helpful Articles
 + [Configuring Postgre](https://mattstauffer.com/blog/laravel-on-heroku-using-a-postgresql-database/)
