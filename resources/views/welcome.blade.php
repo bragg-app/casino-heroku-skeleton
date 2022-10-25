@@ -26,7 +26,7 @@
         $now_max = now()->subSeconds(30)->timestamp;
         $job_test = \Illuminate\Support\Facades\Cache::get('job_test');
         if($job_test) {
-           if($get_job_test < $now_max) {
+           if($job_test < $now_max) {
                \App\Jobs\TestJob::dispatch();
                $job_test = \Illuminate\Support\Facades\Cache::get('job_test');
            }
