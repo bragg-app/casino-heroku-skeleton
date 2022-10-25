@@ -3,6 +3,7 @@
    try {
 	$cache_put = \Illuminate\Support\Facades\Cache::put('cache_test', $date, 10);
         $cache_retrieve = \Illuminate\Support\Facades\Cache::get('cache_test');
+	$cache_error = NULL;
    } catch(Exception $e){
 	$cache_retrieve = NULL;
         $cache_error = $e->getMessage();
