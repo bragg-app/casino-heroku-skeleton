@@ -4,6 +4,15 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
+<<<<<<< HEAD
+=======
+    "repositories": [
+        {
+            "type": "path",
+            "url": ".wainwright"
+        }
+    ],
+>>>>>>> 145773c (x)
     "require": {
 	"php": "^8.1.0",
         "guzzlehttp/guzzle": "^7.2",
