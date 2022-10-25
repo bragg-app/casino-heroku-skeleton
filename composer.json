@@ -11,7 +11,8 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "ext-redis": "*",
-	"ext-openssl": "*"
+	"ext-openssl": "*",
+	"ext-apcu": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
