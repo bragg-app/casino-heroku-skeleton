@@ -1,10 +1,11 @@
 ## Prerequisites
 + PHP (and ideally some Laravel) knowledge.
 + A Heroku user account: [SignUp is free and instant](https://signup.heroku.com/signup/dc)
-+ Familiarity with [getting started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) guide, with the following things installed:
-		+PHP.
-		+Composer.
-		+Heroku CLI.
++ Familiarity with [getting started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) guide, with the following things installed on your **local** machine:
++
+    +PHP.
+    +Composer.
+    +Heroku CLI.
 
 #### Heroku CLI
 Best is to use Heroku CLI to deploy and also develop Wainwright app.
