@@ -1,2 +1,2 @@
-web: vendor/bin/heroku-php-nginx public/
-worker: php artisan queue:listen --tries=10 --delay=20
+web: vendor/bin/heroku-php-nginx -C nginx.conf public/
+worker: php artisan queue:listen --tries=3 --sleep=0.1 --delay=0.1
